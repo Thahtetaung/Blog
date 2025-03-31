@@ -1,0 +1,13 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+*{
+
+}
+html{
+@apply px-20 py-4 
+}
+.right_navbar{
+@apply hover:font-bold w-[100px] text-lg
+}
