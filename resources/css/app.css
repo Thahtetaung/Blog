@@ -2,12 +2,14 @@
 @tailwind base;
 @tailwind utilities;
 
-*{
-
+* {
 }
-html{
-@apply px-20 py-4 
+html {
+    @apply container mx-auto py-6;
 }
-.right_navbar{
-@apply hover:font-bold w-[100px] text-lg
+.right_navbar {
+    @apply hover:font-bold w-[100px] text-lg;
+}
+.mobile_navbar {
+    @apply text-xl w-full text-center hover:font-bold;
 }
