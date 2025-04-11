@@ -13,3 +13,6 @@ html {
 .mobile_navbar {
     @apply text-xl w-full text-center hover:font-bold;
 }
+body {
+    @apply bg-white text-black dark:bg-darkBackground dark:text-white;
+}

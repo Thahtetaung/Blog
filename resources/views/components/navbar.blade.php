@@ -13,15 +13,18 @@
             <a href="#" class="right_navbar hidden md:flex">Home</a>
             <a href="#" class="right_navbar hidden md:flex">Create</a>
             <a href="#" class="right_navbar hidden md:flex">Login</a>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-            </svg>
+            <button id="darkModeToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </button>
+            
               
         </div>
         
         <div id="overlay" class="bg-black inset-0 opacity-50 fixed hidden"></div>
     </div>
-    <div class="fixed top-0 left-0 bg-blue-300 h-full w-72 transform -translate-x-full transition-transform duration-400 ease-in-out" id="sidebar">
+    <div class="fixed top-0 left-0 bg-blue-300 h-full w-72 transform -translate-x-full transition-transform duration-400 ease-in-out " id="sidebar">
         <div id="close" class="flex items-center justify-end p-4"> 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -61,6 +64,18 @@
             toggleSideBar()
         })
 
+        const darkModeToggle = document.getElementById('darkModeToggle')
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            // Store the current theme in localStorage to persist on page reload
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
         
        
 

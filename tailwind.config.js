@@ -8,7 +8,12 @@ export default {
     './resources/**/*.css',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkBackground: '#121212',
+        darkText: '#E4E4E7'
+      }
+    },
   },
   plugins: [],
 }
